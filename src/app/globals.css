@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+@theme {
+  /* ── EVA ASLAM MEDICO palette ─────────────────────────────
+     pine  — deep medical green (headings, primary buttons, footer)
+     leaf  — fresh emerald (brand accents, icons, links)
+     mint  — very light washes and borders
+     ink   — green-tinted text neutrals
+     med   — restrained clinical blue (pulse-line accents only)   */
+  --color-pine-950: #071f18;
+  --color-pine-900: #0a2e23;
+  --color-pine-800: #0b3b2e;
+  --color-pine-700: #0f4a39;
+
+  --color-leaf-600: #0c8a5a;
+  --color-leaf-500: #0fa36b;
+  --color-leaf-400: #2fbc85;
+  --color-leaf-100: #d9f2e6;
+
+  --color-mint-50: #f4faf7;
+  --color-mint-100: #e8f5ee;
+  --color-mint-200: #d7ecdf;
+
+  --color-ink-900: #0e241c;
+  --color-ink-600: #4a6459;
+  --color-ink-400: #7c948a;
+
+  --color-med-500: #3e7bfa;
+
+  --font-display: var(--font-bricolage), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+  --font-hindi: var(--font-devanagari), "Nirmala UI", system-ui, sans-serif;
+
+  --shadow-soft:
+    0 1px 2px rgb(14 36 28 / 0.04), 0 8px 24px -8px rgb(14 36 28 / 0.08);
+  --shadow-lift:
+    0 2px 4px rgb(14 36 28 / 0.05), 0 16px 40px -12px rgb(14 36 28 / 0.14);
+
+  --animate-ecg: ecg 3.2s linear infinite;
+}
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background-color: #fff;
+  color: var(--color-ink-900);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  /* no section may push the page wider than the viewport */
+  overflow-x: clip;
+}
+
+::selection {
+  background-color: var(--color-leaf-100);
+  color: var(--color-pine-800);
+}
+
+/* Visible keyboard focus everywhere, invisible for mouse users */
+:focus-visible {
+  outline: 2px solid var(--color-leaf-500);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Continuous ECG sweep used by the pulse-thread motif */
+@keyframes ecg {
+  from {
+    stroke-dashoffset: 480;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-ecg {
+    animation: none;
+  }
+}
