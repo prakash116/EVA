@@ -25,8 +25,10 @@ export const site = {
   whatsappNumber: "919999999999",
   /** ⚠️ PLACEHOLDER — replace with the real Instagram profile URL. */
   instagram: "https://instagram.com/evaaslammedico",
-  /** ⚠️ PLACEHOLDER — replace with the real production domain. */
-  url: "https://eva-aslam-medico.example.com",
+  /** Set by the deployment workflow; replace the fallback when using a custom domain. */
+  url:
+    process.env.NEXT_PUBLIC_SITE_URL ??
+    "https://eva-aslam-medico.example.com",
   /** ⚠️ PLACEHOLDER — confirm actual opening hours with the pharmacy. */
   hours: "Open daily · Morning to late evening",
   mapsUrl:
@@ -42,11 +44,11 @@ export const orderMessage =
   "Hello EVA ASLAM MEDICO 👋 I would like to order medicines. Here is my requirement:";
 
 export const navLinks = [
-  { label: "About", href: "#about" },
-  { label: "Services", href: "#services" },
-  { label: "How it works", href: "#how-it-works" },
-  { label: "Health tips", href: "#health" },
-  { label: "Visit us", href: "#visit" },
+  { label: "About", href: "/#about" },
+  { label: "Services", href: "/#services" },
+  { label: "How it works", href: "/#how-it-works" },
+  { label: "Health tips", href: "/#health" },
+  { label: "Visit us", href: "/#visit" },
 ] as const;
 
 export interface Service {

@@ -1,4 +1,5 @@
 import { ArrowLeft } from "lucide-react";
+import Link from "next/link";
 import { PulseLine } from "@/components/ui/PulseLine";
 
 export default function NotFound() {
@@ -15,13 +16,13 @@ export default function NotFound() {
         The link may be old or mistyped. Everything you need is back on the
         home page.
       </p>
-      <a
+      <Link
         href="/"
         className="mt-8 inline-flex items-center gap-2 rounded-xl bg-pine-800 px-6 py-3 text-sm font-semibold text-white shadow-soft transition-colors hover:bg-pine-700"
       >
         <ArrowLeft className="h-4 w-4" aria-hidden="true" />
         Back to home
-      </a>
+      </Link>
     </div>
   );
 }

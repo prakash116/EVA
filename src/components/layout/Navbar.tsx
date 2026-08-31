@@ -2,12 +2,13 @@
 
 import { AnimatePresence, motion, useMotionValueEvent, useScroll } from "framer-motion";
 import { Cross, Menu, MessageCircle, Phone, X } from "lucide-react";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { navLinks, orderMessage, site, whatsappHref } from "@/lib/site";
 
 function BrandMark() {
   return (
-    <a href="#home" className="flex items-center gap-2.5" aria-label="EVA ASLAM MEDICO — back to top">
+    <Link href="/#home" className="flex items-center gap-2.5" aria-label="EVA ASLAM MEDICO — back to top">
       <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-pine-800">
         <Cross className="h-4.5 w-4.5 text-leaf-400" strokeWidth={2.75} aria-hidden="true" />
       </span>
@@ -19,7 +20,7 @@ function BrandMark() {
           Medico
         </span>
       </span>
-    </a>
+    </Link>
   );
 }
 
@@ -58,12 +59,12 @@ export function Navbar() {
         <ul className="hidden items-center gap-1 lg:flex">
           {navLinks.map((link) => (
             <li key={link.href}>
-              <a
+              <Link
                 href={link.href}
                 className="rounded-lg px-3.5 py-2 text-sm font-medium text-ink-600 transition-colors hover:bg-mint-100 hover:text-pine-800"
               >
                 {link.label}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
@@ -113,13 +114,13 @@ export function Navbar() {
             <ul className="space-y-1 px-4 py-4">
               {navLinks.map((link) => (
                 <li key={link.href}>
-                  <a
+                  <Link
                     href={link.href}
                     onClick={() => setOpen(false)}
                     className="block rounded-xl px-4 py-3 text-[0.95rem] font-medium text-ink-900 transition-colors hover:bg-mint-100"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
               <li className="flex gap-2 pt-3">

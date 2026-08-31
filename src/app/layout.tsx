@@ -38,7 +38,7 @@ const devanagari = Noto_Sans_Devanagari({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(site.url), // ⚠️ PLACEHOLDER domain — see src/lib/site.ts
+  metadataBase: new URL(new URL(site.url).origin),
   title: {
     default: "EVA ASLAM MEDICO — Pharmacy & Home Healthcare in Kushinagar",
     template: "%s · EVA ASLAM MEDICO",
@@ -58,14 +58,14 @@ export const metadata: Metadata = {
     siteName: site.name,
     title: "EVA ASLAM MEDICO — Your Trusted Pharmacy & Home Healthcare Partner",
     description: site.description,
-    url: "/",
+    url: site.url,
   },
   twitter: {
     card: "summary_large_image",
     title: "EVA ASLAM MEDICO — Pharmacy & Home Healthcare",
     description: site.description,
   },
-  alternates: { canonical: "/" },
+  alternates: { canonical: site.url },
   robots: { index: true, follow: true },
 };
 

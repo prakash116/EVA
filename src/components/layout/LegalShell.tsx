@@ -1,4 +1,5 @@
 import { ArrowLeft } from "lucide-react";
+import Link from "next/link";
 import type { ReactNode } from "react";
 import { Container } from "@/components/ui/Container";
 
@@ -15,13 +16,13 @@ export function LegalShell({
   return (
     <div className="bg-mint-50/60 pb-20 pt-28 lg:pt-36">
       <Container className="max-w-3xl">
-        <a
+        <Link
           href="/"
           className="inline-flex items-center gap-2 text-sm font-semibold text-leaf-600 transition-colors hover:text-pine-800"
         >
           <ArrowLeft className="h-4 w-4" aria-hidden="true" />
           Back to home
-        </a>
+        </Link>
         <h1 className="mt-6 font-display text-3xl font-bold tracking-tight text-pine-800 sm:text-4xl">
           {title}
         </h1>

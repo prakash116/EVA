@@ -1,4 +1,5 @@
 import { Cross, MapPin, MessageCircle } from "lucide-react";
+import Link from "next/link";
 
 /** Inline Instagram glyph — lucide no longer ships brand icons. */
 function InstagramIcon({ className }: { className?: string }) {
@@ -24,11 +25,11 @@ import { Container } from "@/components/ui/Container";
 import { PulseLine } from "@/components/ui/PulseLine";
 
 const exploreLinks = [
-  { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Services", href: "#services" },
-  { label: "Health Awareness", href: "#health" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "/#home" },
+  { label: "About", href: "/#about" },
+  { label: "Services", href: "/#services" },
+  { label: "Health Awareness", href: "/#health" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 const legalLinks = [
@@ -68,12 +69,12 @@ export function Footer() {
             <ul className="mt-4 space-y-2.5">
               {exploreLinks.map((l) => (
                 <li key={l.label}>
-                  <a
+                  <Link
                     href={l.href}
                     className="text-sm text-white/80 transition-colors hover:text-leaf-400"
                   >
                     {l.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -86,12 +87,12 @@ export function Footer() {
             <ul className="mt-4 space-y-2.5">
               {legalLinks.map((l) => (
                 <li key={l.label}>
-                  <a
+                  <Link
                     href={l.href}
                     className="text-sm text-white/80 transition-colors hover:text-leaf-400"
                   >
                     {l.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
